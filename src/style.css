@@ -1,0 +1,15 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0px !important;
+  overflow: hidden;
+}
+
+.webgl {
+  width: 100vw;
+  height: 100vh;
+}
