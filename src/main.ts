@@ -89,15 +89,16 @@ const tick = () => {
 	const minutes = date.getMinutes();
 	const hours = date.getHours() % 12;
 
-	console.log(hours);
-
 	renderer.render(scene, camera);
 
 	control.update();
 
 	secondsHand.rotation.z = (-seconds * Math.PI) / 30;
-	minutesHand.rotation.z = (-minutes * Math.PI) / 30;
-	hourHand.rotation.z = (-hours * Math.PI * 5) / 30;
+
+	const minutesDegree = (-minutes * Math.PI) / 30;
+	minutesHand.rotation.z = minutesDegree;
+
+	hourHand.rotation.z = (-hours * Math.PI) / 6 + minutesDegree / 12;
 
 	window.requestAnimationFrame(tick);
 };
